@@ -1,0 +1,27 @@
+<html>
+    <head><title>minlomin.com</title></head>
+    <body>
+	<form onsubmit="return confirm('Are you sure you want to Delete your user account and related informations?');" id="myForm">
+    <input type="text" name="name" required>
+    <button type="submit">Submit</button>
+</form>
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e){
+    e.preventDefault(); // stop auto submit
+
+    // 👉 Code that runs BEFORE confirmation
+    console.log("Form submit triggered...");
+
+    if (confirm("We are sorry to see to know that you wanted to deleted the store details, Your Registration will be marked for deletion and one of our executive will be in touch with you shortly to resolve your queries. Thanks for reaching our to minlomin.com.")) {
+
+        // 👉 Code that runs AFTER user clicks OK
+        console.log("User confirmed!");
+
+        e.target.submit(); // finally submit the form
+    } else {
+        console.log("User canceled!");
+    }
+});
+</script>
+</body>
+</html>
